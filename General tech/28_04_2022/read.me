@@ -8,13 +8,13 @@ CREATE TABLE tblDepartment
 DepartmentID INT PRIMARY KEY, 
 DepartmentName NVARCHAR (25), 
 DepartmentHead NVARCHAR (20) 
-) 
+) ;
 
 INSERT INTO tblDepartment VALUES
 (1, 'IT', 'Shimi'), 
 (2, 'HR', 'Roth'), 
 (3, 'Payroll', 'Itai'), 
-(4, 'Other Department', 'Simha')
+(4, 'Other Department', 'Simha');
 
 
 
@@ -31,7 +31,7 @@ city NVARCHAR (20),
 HireDate DATE,
 DepartmentID INT,
 CONSTRAINT FK_DepartmentID FOREIGN KEY (DepartmentID) REFERENCES tblDepartment (DepartmentID) 
-) 
+) ;
 
 INSERT INTO tblemployee VALUES
 (1,'Tomer', 'Itzhakov','Male', 'Tomerikoka@gmail.com', '0508554622', 11000, 'Jerusalem', '20011201',1),
@@ -43,7 +43,7 @@ INSERT INTO tblemployee VALUES
 (7,'Dana', 'Tova','Female', 'Dana@gmail.com', '0556789322', 4000, 'Tel-Aviv', '20160202',2),
 (8,'Idan', 'Haviv','Male', 'Idan@gmail.com', '0508752256', 10000, 'Haifa', '20170522',3),
 (9,'Eti', 'Boblil','Female', 'Eti@gmail.com', '0505847665', 2000, 'Haifa', '20180614',4),
-(10,'Esti', 'Karlibah','Female', 'Esti@gmail.com', '0504859998', 1000, 'Haifa', '20140713',2)
+(10,'Esti', 'Karlibah','Female', 'Esti@gmail.com', '0504859998', 1000, 'Haifa', '20140713',2);
 
 
 CREATE TABLE tblCategory
@@ -56,7 +56,7 @@ INSERT INTO tblCategory VALUES
 (1, 'Kitchen'),
 (2, 'Living Room'),
 (3, 'Bedroom'),
-(4, 'Electrical appliance')
+(4, 'Electrical appliance');
 
 
 
@@ -66,7 +66,7 @@ SubCategoryID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 SubCategoryName NVARCHAR (30) NOT NULL, 
 CategoryID INT NOT NULL, 
 CONSTRAINT FK_CategoryID FOREIGN KEY (CategoryID) REFERENCES tblCategory (CategoryID)
-) 
+) ;
 INSERT INTO tblSubCategory VALUES
 ('Sink',1),
 ('Tap',1), 
@@ -79,7 +79,7 @@ INSERT INTO tblSubCategory VALUES
 ('Mirror',3), 
 ('Television',4), 
 ('Washing Machine',4), 
-('Electric Heater',4) 
+('Electric Heater',4) ;
 
 
 
@@ -90,7 +90,7 @@ ProductName NVARCHAR (45),
 ProductPrice INT,
 SubCategoryID INT, 
 CONSTRAINT FK_SubCategoryID FOREIGN KEY (SubCategoryID) REFERENCES tblSubCategory (SubCategoryID)
-)
+);
 
 INSERT INTO tblProducts VALUES
 (1,'Big Sink',5000,1),
@@ -132,7 +132,7 @@ INSERT INTO tblProducts VALUES
 (37,'Coffee',5,null),
 (38,'brown suger',0.5,null),
 (39,'Tea',3,null),
-(40, 'biscuit',6,null)
+(40, 'biscuit',6,null);
 
 
 
@@ -142,7 +142,7 @@ CREATE TABLE tblKingOfAnimals
 AnimalID INT PRIMARY KEY, 
 AnimalName NVARCHAR (30), 
 AnimalDominant INT
-) 
+) ;
 INSERT INTO tblKingOfAnimals VALUES
 (1,'Snake',2), 
 (2,'Wolverine',5),
@@ -150,7 +150,7 @@ INSERT INTO tblKingOfAnimals VALUES
 (4,'Eagle',5),  
 (5,'Hyena',6), 
 (6,'Lion',null)
-
+;
 
 
 
@@ -164,7 +164,7 @@ CustomerPhone NVARCHAR (20)
 INSERT INTO tblIsraelCustomers VALUES
 (1,'Tomer','050-854255'), 
 (2,'Shlomi','050-856547'), 
-(3,'Hana','052-865214')
+(3,'Hana','052-865214');
 
 
 
@@ -173,12 +173,12 @@ CREATE TABLE tblUSCustomers
 CustomerID INT, 
 CustomerName NVARCHAR (20), 
 CustomerPhone NVARCHAR (20) 
-)
+);
 
 INSERT INTO tblUSCustomers VALUES
 (1,'James','050-985522'), 
 (2,'Patrick','050-888852'), 
-(3,'Hana','052-865214')
+(3,'Hana','052-865214');
 
 
 
@@ -206,7 +206,7 @@ Gender  NVARCHAR (20),
 Age     DECIMAL (8,2),
 Height  DECIMAL (8,2),
 Weight  DECIMAL (8,2)
-) 
+) ;
 
 INSERT INTO tblGenderMeasurements VALUES
 (1,'Tomer','Male',31.4,1.73,68.5),
@@ -216,7 +216,7 @@ INSERT INTO tblGenderMeasurements VALUES
 (5,'Rita','Female',32.2,1.65,61.8),
 (6,'Simha','Female',29.5,1.73,55.6),
 (7,'Efrat','Female',35.2,1.70,59.4),
-(8,'Miri','Female',26.4,1.78,63.8)
+(8,'Miri','Female',26.4,1.78,63.8);
 
 
 
@@ -228,7 +228,7 @@ ID INT PRIMARY KEY,
 FirstName NVARCHAR (20), 
 MiddleName NVARCHAR (20), 
 LastName NVARCHAR (20), 
-Email NVARCHAR (25) )
+Email NVARCHAR (25) );
 
 INSERT INTO tblStringTest VALUES
 (1, '      Tomer','  D.    ', 'Itzhakkov-Nevo', 'Tomeriko@gmail.com'),
@@ -237,7 +237,7 @@ INSERT INTO tblStringTest VALUES
 (4, '              Moosh  ','  B.    ', 'Ari', 'Moosh@walla.co.il'),
 (5, ' Gad', NULL , 'Tetanus', 'Gad@walla.co.il'),
 (6, '  Efi','  N.    ', 'Flotch', 'Efi@gmail.com'),
-(7, '      Ehod','  B.    ', 'Barack', 'Ehod@ynet.co.il')
+(7, '      Ehod','  B.    ', 'Barack', 'Ehod@ynet.co.il');
 
 
 
@@ -249,14 +249,14 @@ LastName NVARCHAR (20),
 Age INT, 
 Email NVARCHAR (25), 
 Hobby NVARCHAR (25)
-) 
+) ;
 INSERT INTO tblDuplicates VALUES
 (1,'Eli', 'Meron', 35, 'Eli@gmail.com', 'Cars'),
 (1,'Eli', 'Meron', 35, 'Eli@gmail.com', 'Cars'),
 (2,'Rita', 'Shmoel', 41, 'Rita@gmail.com', 'Theater'),
 (2,'Rita', 'Shmoel', 41, 'Rita@gmail.com', 'Theater'),
 (3,'Kobbi', 'Erdan', 32, 'Kobbi@gmail.com', 'Reading'),
-(4,'Mika', 'Teva', 31, 'Mika@gmail.com', 'Tracking')
+(4,'Mika', 'Teva', 31, 'Mika@gmail.com', 'Tracking');
 
 
 
@@ -415,7 +415,7 @@ INSERT INTO tblSalary VALUES
 (9,'Hanan',10652.4,'2030-9-1'),
 (10,'Amir',8073,'2030-10-1'),
 (11,'Miryam',7345.6,'2030-11-1'),
-(12,'Oshri',7807.4,'2030-12-1')
+(12,'Oshri',7807.4,'2030-12-1');
 
 
 
@@ -425,7 +425,7 @@ CREATE TABLE tblCharacter
 ID INT, 
 NAME NVARCHAR (20), 
 Email NVARCHAR (20)
-) 
+) ;
 
 INSERT INTO tblCharacter VALUES
 (1,'Tomer', 'Tomer.Gamil.com'), 
@@ -435,7 +435,7 @@ INSERT INTO tblCharacter VALUES
 (5,'Moshe', 'Moshe.Gamil.com'),
 (6,'Hava', 'Hava.Gamil.com'), 
 (7,'Meir', 'Meir%Gamil.com'), 
-(8,'Ran', 'Ran%%Gamil.com')
+(8,'Ran', 'Ran%%Gamil.com');
 
 
 
@@ -452,7 +452,7 @@ INSERT INTO tblPassword VALUES
 (2,'98234591122'), 
 (3,'The password is 1231986 - My birthday '), 
 (4,'I don''t have password'), 
-(5,'My password is 222222 use it for free')
+(5,'My password is 222222 use it for free');
 
 
 
@@ -462,10 +462,10 @@ CREATE TABLE tblCountingLetters
 (
 String NVARCHAR (300) 
 ) 
-
+;
 INSERT INTO tblCountingLetters VALUES
 ('If you want to know SQL you need to practice every day for 4 hours')
-
+;
 
 
 
@@ -485,3 +485,4 @@ INSERT INTO tblPhoneComparison VALUES
 ('Nokia',500,6,2000),
 ('MaxPhone',222,10,8000),
 ('SpacePhne',521,8,5000)
+;
